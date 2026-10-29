@@ -1,0 +1,12 @@
+users:
+  - id: 1
+    name: "Коваль Дмитрий Николаевич"
+    tg_id: 8230488853
+    role: owner
+  - id: 2
+    name: "Коваль Елизавета Валерьевна"
+    role: co_owner
+roles:
+  owner: ["deploy","billing","users","all_agents","broadcast"]
+  co_owner: ["users","billing","all_agents"]
+auth: {provider: google_workspace, sso: true}

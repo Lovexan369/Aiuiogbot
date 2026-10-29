@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  api:
+    build: .
+    ports: ["8000:8000","18789:18789"]
+    volumes: ["./data:/app/data","./logs:/app/logs"]
+    env_file: .env
+    restart: always
+  ollama:
+    image: ollama/ollama
+    ports: ["11434:11434"]
+    volumes: [ollama:/root/.ollama]
+  chroma:
+    image: chromadb/chroma
+    ports: ["8001:8000"]
+    volumes: [chroma:/chroma]
+volumes:
+  ollama:
+  chroma:

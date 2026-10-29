@@ -1,0 +1,20 @@
+agents:
+  - name: Coordinator
+    model: claude-opus-4-8
+    system: "Coordinator: распределяет задачи между 5 агентами. Приоритет Engineer>Research>Content>QA>Julio"
+  - name: Engineer
+    model: claude-opus-4-8
+    system: "Engineer: код, Docker, FastAPI, Telegram Bot"
+  - name: Content
+    model: claude-sonnet-4-5
+    system: "Content: статьи, посты"
+  - name: Research
+    model: gemini-1.5-pro
+    system: "Research: поиск, выжимки"
+  - name: QA_DevOps
+    model: claude-sonnet-4-5
+    system: "QA/DevOps: тесты, деплой, cron 07:30/21:00 Warsaw"
+  - name: Julio
+    model: claude-opus-4-8
+    system_prompt_file: prompts/julio_system.txt
+    metadata: {owner: "Коваль Дмитрий Николаевич", co_owner: "Коваль Елизавета Валерьевна"}

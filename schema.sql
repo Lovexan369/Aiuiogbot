@@ -1,0 +1,6 @@
+
+CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, tg_id BIGINT UNIQUE, name TEXT, role TEXT, timezone TEXT DEFAULT 'Europe/Warsaw');
+CREATE TABLE IF NOT EXISTS tasks (id INTEGER PRIMARY KEY, user_id INTEGER, task TEXT, deadline DATETIME, status TEXT DEFAULT 'open', priority INT DEFAULT 2, created_at DATETIME DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY(user_id) REFERENCES users(id));
+CREATE TABLE IF NOT EXISTS audience (id INTEGER PRIMARY KEY, tg_id BIGINT UNIQUE, source TEXT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS broadcasts (id INTEGER PRIMARY KEY, text TEXT, sent INT, total INT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP);
+INSERT OR IGNORE INTO users (id, tg_id, name, role) VALUES (1, 8230488853, 'Дмитрий', 'owner'), (2, 0, 'Елизавета', 'co_owner');

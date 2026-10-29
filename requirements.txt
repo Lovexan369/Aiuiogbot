@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-telegram-bot==22.3
+httpx==0.28.1
+pyyaml
+python-dotenv
+apscheduler
+chromadb
+pydantic
+anthropic>=0.30.0

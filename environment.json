@@ -1,0 +1,33 @@
+{
+  "project": "AIUIOG",
+  "version": "5.0.0",
+  "timezone": "Europe/Warsaw",
+  "domain_whitelist": "xankongcocaking.duckdns.org",
+  "theme": {
+    "bg": "#090d16",
+    "card": "#111827",
+    "accent": "#a855f7"
+  },
+  "llm": {
+    "claude": "claude-opus-4-8",
+    "gemini": "gemini-1.5-pro"
+  },
+  "openclaw": {
+    "gateway_port": 18789,
+    "channels": [
+      "telegram"
+    ]
+  },
+  "fastapi": {
+    "host": "0.0.0.0",
+    "port": 8000
+  },
+  "cron": {
+    "morning": "07:30",
+    "evening": "21:00"
+  },
+  "audience": {
+    "storage": "data/audience.json",
+    "sync": true
+  }
+}
